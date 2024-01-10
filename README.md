@@ -12,4 +12,4 @@ curl
 ```shell
 latest
 ```
-Edit `repos.txt` to add/remove repos
+Edit `~/Library/Application Support/alpineyahoo.latest/repos.txt` to add/remove repos.
