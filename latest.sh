@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin"
 echo "Select repo(s):"
