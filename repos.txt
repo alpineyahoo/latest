@@ -1,0 +1,3 @@
+Manager-io/Manager
+johnlindquist/kitapp
+balena-io/etcher
