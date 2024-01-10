@@ -6,7 +6,7 @@ brew install gum wget
 ```
 ## Install
 ```shell
-curl 
+curl -sL https://github.com/alpineyahoo/latest/raw/main/install.sh | zsh
 ```
 ## Usage
 ```shell
