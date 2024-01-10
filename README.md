@@ -13,3 +13,6 @@ curl -sL https://github.com/alpineyahoo/latest/raw/main/install.sh | zsh
 latest
 ```
 Edit `~/Library/Application Support/alpineyahoo.latest/repos.txt` to add/remove repos.
+
+## Source
+This script is based on Kamil Wozniak's [Article](https://smarterco.de/download-latest-version-from-github-with-curl/).
