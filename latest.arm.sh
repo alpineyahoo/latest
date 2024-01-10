@@ -8,7 +8,7 @@ do
 curl -sL https://api.github.com/repos/$i/releases/latest |
 grep browser_download_url |
 grep -e dmg -e pkg -e darwin -e osx -e mac |
-grep -v arm |
+grep -v x86 |
 cut -d '"' -f 4
 done) &&
 echo "Select file(s):" &&
