@@ -22,3 +22,5 @@ osascript -e '
 	end run
 ' "$name"
 done
+
+# https://github.com/alpineyahoo/latest
