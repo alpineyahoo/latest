@@ -1,5 +1,5 @@
 # latest
-Download and install latest new release from GitHub (for MacOS users)
+This tool downloads and installs the latest new release images/packages from GitHub (for MacOS users)
 ## Prerequisites
 ```shell
 brew install gum wget
