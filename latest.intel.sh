@@ -23,4 +23,10 @@ osascript -e '
 ' "$name"
 done
 
+# ~/Downloads/<package>.pkg
+
+# ~/Downloads/<image>.dmg, /Volumes/<image>/*.pkg
+
+# ~/Downloads/<image>.dmg, /Volumes/<image>/*.app
+
 # https://github.com/alpineyahoo/latest
