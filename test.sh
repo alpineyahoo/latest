@@ -2,7 +2,7 @@
 
 # echo "apple/pkl" |
 # xargs -I _ gh release list -R _ --exclude-drafts --exclude-pre-releases \
-# --json createdAt,isDraft,isLatest,isPrerelease,name,publishedAt,tagName -q '.[] | select(.isLatest == true)' |
+# --json createdAt,isLatest,name,publishedAt,tagName -q '.[] | select(.isLatest == true)' |
 # jq
 
 # 最新版リリースのタグ値取得. "-L 3" オプションは1でもいい気がするが念のため3
