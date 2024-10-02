@@ -14,3 +14,5 @@ xargs -I _ gh release view _ -R apple/pkl \
 --json apiUrl,assets,author,body,createdAt,databaseId,id,name,publishedAt,tagName,tarballUrl,targetCommitish,uploadUrl,url,zipballUrl \
 -q '.assets[] | select(.name | test("mac|osx|darwin"))' |
 jq
+
+# gh release download
