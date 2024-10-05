@@ -23,6 +23,8 @@ osascript -e '
 ' "$name"
 done
 
+# command ls -1 ~/Downloads | grep -E 'dmg|pkg' | fzf --reverse | xargs -I _ echo ~/Downloads/_
+
 # ~/Downloads/<package>.pkg
 
 # ~/Downloads/<image>.dmg, /Volumes/<image>/*.pkg
