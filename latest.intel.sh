@@ -23,6 +23,8 @@ EOF
 done
 
 # command ls -1 ~/Downloads | grep -E 'dmg|pkg' | fzf --reverse | xargs -I _ echo ~/Downloads/_
+# for i in ~/Downloads/*.pkg(N); do hello; done
+# for i in ~/Downloads/*.dmg(N); do hello; done
 
 # ~/Downloads/<package>.pkg
 
