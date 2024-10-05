@@ -16,11 +16,10 @@ for i in $(echo $latests | gum choose --no-limit)
 do
 wget -q --show-progress -P $HOME/Downloads $i &&
 name=$(echo $i | rev | cut -d '/' -f 1 | rev) &&
-osascript -e '
-	on run argv
-		display notification ((item 1 of argv) & " downloaded") with title "latest"
-	end run
-' "$name"
+osascript << EOF
+  display notification ("${name}" & " downloaded") with title "latest"
+EOF
+
 done
 
 # command ls -1 ~/Downloads | grep -E 'dmg|pkg' | fzf --reverse | xargs -I _ echo ~/Downloads/_
