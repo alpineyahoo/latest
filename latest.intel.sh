@@ -28,7 +28,7 @@ for i (~/Downloads/*.pkg(N)) (
   rm "$i"
 )
 for i (~/Downloads/*.dmg(N)) (
-  volume=$(hdiutil attach "$i" | awk 'END{print $3}')
+  volume=$(hdiutil attach "$i" | tail -n 1 | cut -f 3-) # 契約書を認める必要あり(Agree Y/N?)
   echo "Installing $i"
   for j ("$volume"/*.app(N)) sudo command cp -R "$j" /Applications # overwrites existing app
   for j ("$volume"/*.pkg(N)) sudo installer -pkg "$j" -target /
