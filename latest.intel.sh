@@ -7,7 +7,7 @@ latests=$(for i in $(gum choose --no-limit < $repos)
 do
 curl -sL https://api.github.com/repos/$i/releases/latest |
 grep browser_download_url |
-grep -E 'dmg|pkg|darwin|osx|mac' |
+grep -E 'dmg|pkg|darwin|osx|mac|zip' |
 grep -v arm |
 cut -d '"' -f 4
 done) &&
