@@ -2,6 +2,7 @@
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin" &&
 repos="$HOME/Library/Application Support/alpineyahoo.latest/repos.txt"
+figlet -f basic latest
 echo "Select repo(s):" &&
 latests=$(for i in $(gum choose --no-limit < $repos)
 do
