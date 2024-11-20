@@ -1,4 +1,11 @@
-Manager-io/Manager
-johnlindquist/kitapp
-balena-io/etcher
-Acreom/releases
+[github]
+Manager = "Manager-io/Manager"
+Kitapp = "johnlindquist/kitapp"
+balenaEtcher = "balena-io/etcher"
+acreom = "Acreom/releases"
+
+[webpage]
+Mendeley = "https://www.mendeley.com/download-reference-manager/macOS"
+
+[direct]
+RemNote = "https://backend.remnote.com/desktop/mac"
