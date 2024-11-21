@@ -2,7 +2,7 @@
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin"
 mkdir -p $HOME/Library/Application\ Support/alpineyahoo.latest
-curl -sL https://github.com/alpineyahoo/latest/raw/main/repos.txt >> $HOME/Library/Application\ Support/alpineyahoo.latest/repos.txt
+curl -sL https://github.com/alpineyahoo/latest/raw/main/repos.json >> $HOME/Library/Application\ Support/alpineyahoo.latest/repos.json
 echo "Which is your architecture?" &&
 curl -sL https://github.com/alpineyahoo/latest/raw/main/latest.$(gum choose arm intel).sh >> latest
 chmod 700 latest
