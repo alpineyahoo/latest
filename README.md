@@ -1,8 +1,9 @@
 # latest
-This tool downloads and installs the latest new release images/packages from GitHub (for MacOS users)
+This tool downloads and installs the latest new release images/packages from GitHub (for MacOS users).<br>
+Optionally you can set some webpages or direct links if available.
 ## Prerequisites
 ```shell
-brew install gum wget
+brew install gum wget curl jq
 ```
 ## Install
 ```shell
@@ -12,7 +13,7 @@ curl -sL https://github.com/alpineyahoo/latest/raw/main/install.sh | zsh
 ```shell
 latest
 ```
-Edit `~/Library/Application Support/alpineyahoo.latest/repos.txt` to add/remove repos.
+Edit `~/Library/Application Support/alpineyahoo.latest/repos.json` to add/remove repos.
 
 ## Source
 This script is based on Kamil Wozniak's [Article](https://smarterco.de/download-latest-version-from-github-with-curl/).
