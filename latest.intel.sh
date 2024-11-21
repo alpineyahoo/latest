@@ -37,18 +37,4 @@ for i (~/Downloads/*.dmg(N)) (
   rm "$i"
 )
 
-# command ls -1 ~/Downloads | grep -E 'dmg|pkg' | fzf --reverse | xargs -I _ echo ~/Downloads/_
-# for i in ~/Downloads/*.pkg(N); do hello; done
-# for i in ~/Downloads/*.dmg(N); do hello; done
-# hdiutil attach ~/Downloads/*.dmg | awk 'END{print $3}'
-# hdiutil attach ~/Downloads/*.dmg | awk 'END{print $3}' | xargs -I _ zsh -c 'echo "_"/*.app'
-# for i (~/Downloads/*.pkg(N)) echo "${i}"
-# for i ($(seq 1 5)) (echo Hello; echo "${i}")
-
-# ~/Downloads/<package>.pkg
-
-# ~/Downloads/<image>.dmg, /Volumes/<image>/*.pkg
-
-# ~/Downloads/<image>.dmg, /Volumes/<image>/*.app
-
 # https://github.com/alpineyahoo/latest
