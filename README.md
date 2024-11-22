@@ -3,7 +3,7 @@ This tool downloads and installs the latest new release images/packages from Git
 Optionally you can set some webpages or direct links if available.
 ## Prerequisites
 ```shell
-brew install gum wget curl jq
+brew install gum wget curl jq lynx figlet zsh
 ```
 ## Install
 ```shell
