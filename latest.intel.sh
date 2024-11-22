@@ -1,17 +1,27 @@
 #!/usr/bin/env zsh
 
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin" &&
-repos="$HOME/Library/Application Support/alpineyahoo.latest/repos.txt"
-figlet -f basic latest
+repos="$HOME/Library/Application Support/alpineyahoo.latest/repos.json"
+[[ $(uname -m) == 'x86_64' ]] && archt="arm" || archt="x86" # check if Intel or ARM, select opposite (invert match)
+gh_latest(){
+  curl -sL https://api.github.com/repos/$1/releases/latest |
+  grep browser_download_url |
+  grep -E 'dmg|pkg|darwin|osx|mac|zip' |
+  grep -v "$archt" |
+  cut -d '"' -f 4;
+}
+get_link(){
+  src="$(jq -r 'path(.[] | select(.'$1' != null))[0]' $repos)"
+  value="$(jq -r '.'$src'.'$1'' $repos)"
+  case "$src" in
+    "github" ) gh_latest "$value" ;;
+    "webpage" ) lynx -dump -listonly -nonumbers "$value" | grep -E 'dmg|pkg|darwin|osx|mac|zip' | grep -v "$archt" ;;
+    "direct" ) curl -sIL "$value" | grep -i "location" | awk '{print $2}' | tr -d "\r" ;;
+  esac;
+}
+figlet -f basic latest # display ASCII
 echo "Select repo(s):" &&
-latests=$(for i in $(gum choose --no-limit < $repos)
-do
-curl -sL https://api.github.com/repos/$i/releases/latest |
-grep browser_download_url |
-grep -E 'dmg|pkg|darwin|osx|mac|zip' |
-grep -v arm |
-cut -d '"' -f 4
-done) &&
+latests=$(for i ($(jq -r '.[] | keys[]' $repos | gum choose --no-limit)) (get_link "$i")) &&
 echo "Select file(s):" &&
 for i in $(echo $latests | gum choose --no-limit)
 do
