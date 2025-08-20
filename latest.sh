@@ -22,6 +22,8 @@ get_link(){
 figlet -f basic latest # display ASCII
 echo "Select repo(s):" &&
 latests=$(for i ($(jq -r '.[] | keys[]' $repos | gum choose --no-limit)) (get_link "$i")) &&
+[[ -z "$latests" ]] &&
+echo "GitHub REST API requests rate limit exceeded. Try again later." ||
 echo "Select file(s):" &&
 for i in $(echo $latests | gum choose --no-limit)
 do
