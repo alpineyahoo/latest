@@ -27,7 +27,7 @@ echo "GitHub REST API requests rate limit exceeded. Try again later." ||
 echo "Select file(s):" &&
 for i in $(echo $latests | gum choose --no-limit)
 do
-wget -q --show-progress -P $HOME/Downloads $i &&
+wget -q -c --show-progress -P $HOME/Downloads $i &&
 name=$(echo $i | rev | cut -d '/' -f 1 | rev) &&
 osascript << EOF
   display notification ("${name}" & " downloaded") with title "latest"
