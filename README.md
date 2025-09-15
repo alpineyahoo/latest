@@ -10,9 +10,10 @@ brew install gum wget curl jq lynx figlet zsh
 curl -sL https://github.com/alpineyahoo/latest/raw/main/install.sh | zsh
 ```
 ## Usage
-```shell
-latest
-```
+Just hit `latest`. Command doesn't provide options.
+
+![usage](usage.gif)
+
 Edit `~/Library/Application Support/alpineyahoo.latest/repos.json` to add/remove repos.
 
 ## Source
