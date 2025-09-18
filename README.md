@@ -2,6 +2,7 @@
 This tool downloads and installs the latest new release images/packages from GitHub (for MacOS users).<br>
 Optionally you can set some webpages or direct links if available.
 ## Prerequisites
+You need to install `gum`, `wget`, `curl` (if necessary), `jq`, `lynx`, `figlet`, and `zsh`.
 ```shell
 brew install gum wget curl jq lynx figlet zsh
 ```
@@ -10,7 +11,7 @@ brew install gum wget curl jq lynx figlet zsh
 curl -sL https://github.com/alpineyahoo/latest/raw/main/install.sh | zsh
 ```
 ## Usage
-Just hit `latest`. Command doesn't provide options.
+Just hit `latest` in your terminal. Command provides no options.
 
 ![usage](usage.gif)
 
