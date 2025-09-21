@@ -11,8 +11,8 @@ gh_latest(){
   cut -d '"' -f 4;
 }
 get_link(){
-  src="$(jq -r 'path(.[] | select(.'$1' != null))[0]' $repos)"
-  value="$(jq -r '.'$src'.'$1'' $repos)"
+  src="$(jq -r 'path(.[] | select(.'\"$1\"' != null))[0]' $repos)"
+  value="$(jq -r '.'$src'.'\"$1\"'' $repos)"
   case "$src" in
     "github" ) gh_latest "$value" ;;
     "webpage" ) lynx -dump -listonly -nonumbers "$value" | grep -E 'dmg|pkg|darwin|osx|mac|zip' | grep -v "$archt" ;;
