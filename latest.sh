@@ -6,7 +6,7 @@ repos="$HOME/Library/Application Support/alpineyahoo.latest/repos.json"
 gh_latest(){
   curl -sL https://api.github.com/repos/$1/releases/latest |
   grep browser_download_url |
-  grep -E 'dmg|pkg|darwin|osx|mac|zip' |
+  grep -E 'dmg|pkg|darwin|osx|mac|zip|/[^.]+"' |
   grep -v "$archt" |
   cut -d '"' -f 4;
 }
